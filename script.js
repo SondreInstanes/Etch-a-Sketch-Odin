@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 
 let sqNum = 16;
 
+// Grid creation
 function createGrid(sqNum) {
     for (let i = 0; i < sqNum; i++) {
         const row = document.createElement('div');
@@ -15,9 +16,14 @@ function createGrid(sqNum) {
             box.style.width = `${squareSize}px`
             box.style.height = `${squareSize}px`
 
+            box.addEventListener("mouseenter", () => {
+                box.style.backgroundColor = "black";
+            });
+
             row.appendChild(box);
         }
         container.appendChild(row);
     }
 }
+
 createGrid(16);
